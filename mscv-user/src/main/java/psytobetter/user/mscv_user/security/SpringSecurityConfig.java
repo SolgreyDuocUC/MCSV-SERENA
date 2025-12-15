@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.*;
 import psytobetter.user.mscv_user.security.filter.JwtAuthenticationFilter;
 import psytobetter.user.mscv_user.security.filter.JwtValidationFilter;
@@ -50,11 +51,11 @@ public class SpringSecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
                 )
 
-                .addFilter(authFilter)
-                .addFilterAfter(new JwtValidationFilter(jwtUtil), JwtAuthenticationFilter.class)
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JwtValidationFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class)
 
                 .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
                 .build();
