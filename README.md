@@ -159,7 +159,7 @@ No se identificaron endpoints externos (de terceros) en la documentación del pr
 2.  **Configuración de BD:** Asegúrese de configurar las credenciales y el tipo de base de datos para cada microservicio en sus respectivos archivos de configuración (`application.properties` o `application.yml`).
 3.  **Clonar Repositorio Backend:**
     ```bash
-    git clone [COLOCAR ENLACE AL REPO DE BACKEND AQUÍ]
+    git clone https://github.com/SolgreyDuocUC/MCSV-SERENA
     ```
 4.  **Ejecución:** Ejecutar cada microservicio de forma independiente:
     ```bash
@@ -175,7 +175,7 @@ No se identificaron endpoints externos (de terceros) en la documentación del pr
 
 ### Código Fuente
 
-* **Código Fuente Completo:** `[COLOCAR ENLACE AL REPO DE BACKEND AQUÍ]`
+* **Código Fuente Completo:** `https://github.com/SolgreyDuocUC/MCSV-SERENA`
 
 ### Evidencia de Trabajo Colaborativo
 
@@ -194,3 +194,4 @@ Serena es una aplicación móvil desarrollada para el registro y seguimiento de 
 
 * Diego Arias
 * Solgrey Medina
+
