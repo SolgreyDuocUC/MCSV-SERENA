@@ -59,7 +59,7 @@ public class UserActiveSessionServiceImpl implements UserActiveSessionService {
 
     private UserActiveSessionResponseDTO mapToResponse(UserActiveSession entity) {
         UserActiveSessionResponseDTO dto = new UserActiveSessionResponseDTO();
-        dto.setSessionId(entity.getSessionId());
+        dto.setSessionId(Math.toIntExact(entity.getSessionId()));
         dto.setActiveUserId(entity.getActiveUserId());
         return dto;
     }

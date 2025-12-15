@@ -13,7 +13,7 @@ public class UserActiveSession {
 
     @Id
     @Column(name = "session_id")
-    private Integer sessionId = 1;
+    private Long sessionId;
 
     @Column(name = "id_usuario_activo", nullable = false)
     private Long activeUserId;
